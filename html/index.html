@@ -1,0 +1,438 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <link type="text/css" rel="stylesheet"
+          href="bootstrap-combined.min.css">
+    <link type="text/css" rel="stylesheet"
+          href="final-code-wavetheory-lightbox.css">
+    <link type="application/rss+xml" rel="alternate" href="rss.xml"
+          title="Coding and administration articles by ttsiodras">
+    <script type="text/javascript" src="prototype.js"></script>
+    <script type="text/javascript"
+            src="scriptaculous.js?load=effects,builder"></script>
+    <script type="text/javascript" src="//apis.google.com/js/plusone.js">
+        {lang:'en', parsetags:'explicit'}
+    </script>
+    <title>Porting my Score4 game to React/TypeScript</title>
+    <link type="text/css" rel="stylesheet" href="matrix.css">
+    <script src="react.js"></script>
+    <script src="components/score4.js"></script>
+</head>
+<body>
+    <div class="well" id="Page">
+        <div id="Banner">Porting my Score4 game to React/TypeScript</div>
+        <div id="MainContent">
+            <div id="plusone-div" class="plusone"></div>
+            <script type="text/javascript">gapi.plusone.render('plusone-div',{"size": "small", "count": "false"});</script>
+            &nbsp;
+            <a href="//www.reddit.com/r/programming/submit" onclick="window.location = window.location.protocol + '//www.reddit.com/r/programming/submit?url=' + encodeURIComponent(window.location); return false"> <img src="spreddit7.gif" alt="submit to programming reddit" border="0"> </a>
+            <br>&nbsp;<br>
+            <p><em>(September 2015)</em>
+<h2>Porting my Score4 game to React/TypeScript</h2>
+<div class="scrollableContainer leftFloat">
+<img hspace="40" vspace="0" alt="Score4 - Connect4" src="connect-four.jpg"><br>
+<em>The Score 4 (Connect 4) game.</em>
+</div>
+<table border="1" frame="box" cellpadding="10" summary="for TL;DR people" bgcolor="#80DD80">
+<tr><td>
+<div style="text-align: left">
+<b>For the TL;DR crowd:</b><br>
+<br>If you are are a developer - especially a frontend one - read on.<br>
+Otherwise, navigate below and
+<a href="#playnow">play Score4</a>.
+</div>
+</td></tr></table>&nbsp;<br>
+Four years ago I implemented
+<a href="score4.html">the AI Minimax algorithm</a> and used it to play
+a game called
+<a href="http://en.wikipedia.org/wiki/Connect_Four">Score4 / ConnectFour</a>.
+<p>
+I did this after discovering the difference of doing things in functional
+(as opposed to imperative) style. I coded the algorithm
+<a href="https://github.com/ttsiodras/Score4">in many languages</a>,
+and finally <a href="score4js.html">ported it to Javascript</a> - thus
+making the game accessible to any machine with a decent browser.
+Phones, tablets, desktops and laptops could now be used to play the
+game - one platform to Rule Them All...
+<p>Years passed by...
+<p>And as they did, the programming world - as usual - 
+re-discovered some old truths...
+<p>...which I wanted to put to the test.
+<h2>Brand "new" wisdom</h2>
+<h3>GUIs are hard - meet
+    <a href="http://facebook.github.io/react/">React</a></h3>
+Yes, GUIs are very hard to properly code ; but can be
+made much easier, if you represent your user interface as a
+function, that gets your state as input. Whenever your state
+changes, you call that function, and <em>bada-bing</em> -
+everything shows up... nice and easy.
+<p>
+Equally important - this
+"<a href="https://facebook.github.io/jsx/">magic function</a>"
+can actually do a significant optimization:
+it can see which parts of your UI
+are associated with which parts of your state, and only update
+the displayed parts <em>that were actually impacted</em> by
+your state change.
+<p>Clearer code *and* faster execution - could it be?
+<h3>Return of the Types - meet
+<a href="http://www.typescriptlang.org/">TypeScript</a>
+</h3>
+I love <a href="python.html">Python</a> ; and appreciate Javascript
+and Clojure the Powerful, and all the rest of the dynamically typed languages...
+Their code has more clarity - and brevity -
+than <em>&lt;insert-run-of-the-mill-language&gt;</em>...
+By not having to prefix each and every one of your variables
+with type-specifications, only the core logic shines
+through.
+<p>
+But let's be honest about it.
+<p>The lack of these type-specs
+also means... that the errors that were traditionally caught
+by compilers now blow up in your face.
+<p>At run-time.
+With your clients yelling at your support people.
+<p>And heaven forbid if you need to refactor...
+you build huge test suites and have an army of machines run them
+in <a href="https://circleci.com/">CircleCI</a>, and you check
+religiously for code coverage... otherwise code refactoring becomes
+<b>too interesting</b>.
+<div>
+    <center>
+    <img
+        hspace="20" vspace="10"
+        alt="teething baby biting snake"
+        src="indiana.jpg"><br>
+    </center>
+</div>
+<p>In hindsight, I think we gave up on compile-time checks too easily...
+when what we longed for was in fact cleaner, more expressive syntax
+(<em>OK, that and rapid edit-run cycles - say what you will about
+Go, they got that right</em>).
+<p>So in the backend, I've started playing with 
+<a href="https://github.com/ttsiodras/ScalaPlayground/blob/master/3.usingPackagesForBenchmarking/README.md">Scala</a> (and a little bit, with Go - despite
+the disappointing type system. That thing compiles fast!)
+<p>
+And in the frontend... as fate would have it,
+<a href="http://www.typescriptlang.org/">TypeScript</a>
+recently acquired support for a major piece of React: JSX syntax.
+<h2>Time to play</h2>
+That was the last straw - last Thursday, right after work, I decided to put
+these technologies to the test. I would finally give React a try...
+something I've wanted to do for quite some time. I would also use TypeScript ;
+getting back into the nice, comfortable zone of a compiler baby-sitting my
+code.
+<p>
+TypeScript's syntax is actually quite nice - not Python or OCaml level,
+but quite close. TBH, I've gone through everything
+<a href="https://en.wikipedia.org/wiki/Anders_Hejlsberg">Anders</a>
+created, all the way back to Turbo Pascal... and firmly believe the man
+is a genius.
+<p>
+To top it all off, I would also try to make my UI as declarative as
+possible - which means that instead of using imperative Canvas drawing
+commands, I would switch to CSS-based rendering of the board.
+<h3>Step 1: CSS</h3>
+First, the easy parts - removing all canvas drawing code, and the related
+artifacts... like mouse-click-to-column-mapping code. Done.
+<p>
+I then had to figure out how to create a board using only HTML/CSS. I am not
+a frontend engineer, so... this required a bit of digging. Eventually
+I settled on a simple table with CSS-generated circles as tiles.
+<div class='codegenWrapper'>
+<!-- Generator: GNU source-highlight 3.1.8
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><font color="#993399">.no_coin</font> <font color="#FF0000">{</font>
+    <font color="#0000FF">width:</font> <i><font color="#009900">50px</font></i>;
+    <font color="#0000FF">height:</font> <i><font color="#009900">50px</font></i>;
+<font color="#FF0000">}</font>
+
+<font color="#993399">.red_coin</font> <font color="#FF0000">{</font>
+    <font color="#0000FF">border-radius:</font> <i><font color="#009900">50%</font></i>;
+    <font color="#0000FF">width:</font> <i><font color="#009900">50px</font></i>;
+    <font color="#0000FF">height:</font> <i><font color="#009900">50px</font></i>;
+    <font color="#0000FF">display:</font> <i><font color="#009900">inline-block</font></i>;
+    <font color="#0000FF">background:</font> <i><font color="#009900">red</font></i>;
+<font color="#FF0000">}</font>
+</tt></pre>
+</div>
+If a div has a class of <code>red-coin</code> then it will show up
+in the board's table as a red game tile:
+<div>
+    <center>
+    <img
+        hspace="10" vspace="10"
+        alt="red tile"
+        src="red-circle.png"><br>
+    </center>
+</div>
+<h3>Step 2: State</h3>
+Next step: state... What is the state of my game - the one that influences
+my UI?
+<p>
+Well...
+<ul>
+    <li>There's the board itself, obviously. I use -1, 0 and 1 to represent
+        the tile values (green, empty, red) so it's a <code>number[][]</code>
+    <li>There's the message I show to the player - a <code>string</code>
+    <li>There's the wins / losses counter (two <code>number</code>s).
+</ul>
+And that's it, really:
+<div class='codegenWrapper'>
+<!-- Generator: GNU source-highlight 3.1.8
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>    <b><font color="#0000FF">class</font></b> Score4State <font color="#FF0000">{</font>
+        board<font color="#990000">:</font> number<font color="#990000">[][];</font>
+        info<font color="#990000">:</font> string<font color="#990000">;</font>
+        wins<font color="#990000">:</font> number<font color="#990000">;</font>
+        losses<font color="#990000">:</font> number<font color="#990000">;</font>
+    <font color="#FF0000">}</font>
+</tt></pre>
+</div>
+OK, and how would I go about, rendering this state to the table elements
+that compose my UI?
+<h3>Step 3: JSX</h3>
+Turns out this was quite easy - a lot easier than figuring out Angular!
+
+<div class='codegenWrapper'>
+<!-- Generator: GNU source-highlight 3.1.8
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>    <b><font color="#000000">showComponent</font></b><font color="#990000">()</font> <font color="#FF0000">{</font>
+        React<font color="#990000">.</font><b><font color="#000000">render</font></b><font color="#990000">(</font>
+            <font color="#990000">&lt;</font>Score4 <font color="#990000">/&gt;,</font> document<font color="#990000">.</font><b><font color="#000000">getElementById</font></b><font color="#990000">(</font><font color="#FF0000">'board'</font><font color="#990000">));</font>
+    <font color="#FF0000">}</font>
+</tt></pre>
+</div>
+We tell React to render our Score4 component in our HTML page, at the
+place where we have a <code>board</code> div:
+
+<div class='codegenWrapper'>
+<!-- Generator: GNU source-highlight 3.1.8
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>    <b><font color="#0000FF">&lt;div</font></b> <font color="#009900">id</font><font color="#990000">=</font><font color="#FF0000">"board"</font> <font color="#009900">align</font><font color="#990000">=</font><font color="#FF0000">"center"</font><b><font color="#0000FF">&gt;&lt;/div&gt;</font></b>
+</tt></pre>
+</div>
+And our component will traverse the board, emitting the cells based on their state...
+<p>To ease the traversal, since poor Javascript lacks a <code>range</code>, I provided
+one - and 
+<a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY</a>-ed
+the code that properly counts victories in <code>proclaim</code>:
+<div class='codegenWrapper'>
+<!-- Generator: GNU source-highlight 3.1.8
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><b><font color="#0000FF">var</font></b> proclaim <font color="#990000">=</font> 
+    <font color="#990000">(</font>n<font color="#990000">:</font>number<font color="#990000">)</font> <font color="#990000">=&gt;</font> <b><font color="#000000">String</font></b><font color="#990000">(</font>n<font color="#990000">)</font> <font color="#990000">+</font> <font color="#FF0000">" victor"</font> <font color="#990000">+</font> <font color="#990000">(</font>n <font color="#990000">===</font> <font color="#993399">1</font><font color="#990000">?</font> <font color="#FF0000">"y."</font><font color="#990000">:</font><font color="#FF0000">"ies."</font><font color="#990000">)</font>
+<font color="#990000">;</font>
+<b><font color="#0000FF">var</font></b> range <font color="#990000">=</font> <font color="#990000">(</font>n<font color="#990000">:</font>number<font color="#990000">)</font> <font color="#990000">=&gt;</font> <font color="#FF0000">{</font>
+    <b><font color="#0000FF">var</font></b> result <font color="#990000">=</font> <font color="#990000">[];</font>
+    <b><font color="#0000FF">for</font></b><font color="#990000">(</font><b><font color="#0000FF">var</font></b> i<font color="#990000">=</font><font color="#993399">0</font><font color="#990000">;</font> i<font color="#990000">&lt;</font>n<font color="#990000">;</font> i<font color="#990000">++)</font> 
+        result<font color="#990000">.</font><b><font color="#000000">push</font></b><font color="#990000">(</font>i<font color="#990000">);</font>
+    <b><font color="#0000FF">return</font></b> result<font color="#990000">;</font>
+<font color="#FF0000">}</font><font color="#990000">;</font>
+<b><font color="#0000FF">return</font></b> <font color="#990000">(</font>
+    <font color="#990000">&lt;</font>div<font color="#990000">&gt;</font>
+        <font color="#990000">&lt;</font>span style<font color="#990000">=</font><font color="#FF0000">{{</font>color<font color="#990000">:</font><font color="#FF0000">"green"</font><font color="#FF0000">}}</font><font color="#990000">&gt;</font>
+        <font color="#990000">&lt;</font>b<font color="#990000">&gt;</font>You<font color="#990000">&lt;</font><font color="#FF6600">/b&gt;:&lt;/</font>span<font color="#990000">&gt;</font> <font color="#FF0000">{</font><b><font color="#000000">proclaim</font></b><font color="#990000">(</font><b><font color="#0000FF">this</font></b><font color="#990000">.</font>state<font color="#990000">.</font>wins<font color="#990000">)</font><font color="#FF0000">}</font>
+        <font color="#990000">&lt;</font>div style<font color="#990000">=</font><font color="#FF0000">{{</font>display<font color="#990000">:</font><font color="#FF0000">'inline-block'</font><font color="#FF0000">}}</font><font color="#990000">&gt;</font>
+            <font color="#990000">&lt;</font>table className<font color="#990000">=</font><font color="#FF0000">{</font><font color="#FF0000">"grid_table"</font><font color="#FF0000">}</font><font color="#990000">&gt;</font>
+            <font color="#FF0000">{</font>
+                <b><font color="#000000">range</font></b><font color="#990000">(</font>Score4_AI<font color="#990000">.</font>height<font color="#990000">).</font><b><font color="#000000">map</font></b><font color="#990000">(</font> y <font color="#990000">=&gt;</font> <font color="#990000">(</font>
+                        <font color="#990000">&lt;</font>tr key<font color="#990000">=</font><font color="#FF0000">{</font>y<font color="#FF0000">}</font><font color="#990000">&gt;</font>
+                        <font color="#FF0000">{</font>
+                            <b><font color="#000000">range</font></b><font color="#990000">(</font>Score4_AI<font color="#990000">.</font>width<font color="#990000">).</font><b><font color="#000000">map</font></b><font color="#990000">(</font> 
+                                x <font color="#990000">=&gt;</font> <b><font color="#000000">cellMaker</font></b><font color="#990000">(</font>y<font color="#990000">,</font> x<font color="#990000">)</font>
+                            <font color="#990000">)</font>
+                        <font color="#FF0000">}</font>
+                        <font color="#990000">&lt;/</font>tr<font color="#990000">&gt;</font>
+                    <font color="#990000">)</font>
+                <font color="#990000">)</font>
+            <font color="#FF0000">}</font>
+            <font color="#990000">&lt;/</font>table<font color="#990000">&gt;</font>
+            <font color="#990000">&lt;</font>p<font color="#990000">&gt;</font><font color="#FF0000">{</font><b><font color="#0000FF">this</font></b><font color="#990000">.</font>state<font color="#990000">.</font>info<font color="#FF0000">}</font><font color="#990000">&lt;/</font>p<font color="#990000">&gt;</font>
+            <font color="#990000">&lt;</font>button type<font color="#990000">=</font><font color="#FF0000">"button"</font> onClick<font color="#990000">=</font><font color="#FF0000">{</font>resetAndRepaint<font color="#FF0000">}</font><font color="#990000">&gt;&lt;</font>b<font color="#990000">&gt;</font>New game<font color="#990000">&lt;</font><font color="#FF6600">/b&gt;&lt;/</font>button<font color="#990000">&gt;</font>
+        <font color="#990000">&lt;/</font>div<font color="#990000">&gt;</font>
+        <font color="#990000">&lt;</font>span style<font color="#990000">=</font><font color="#FF0000">{{</font>color<font color="#990000">:</font><font color="#FF0000">"red"</font><font color="#FF0000">}}</font><font color="#990000">&gt;</font>
+        <font color="#990000">&lt;</font>b<font color="#990000">&gt;</font>CPU<font color="#990000">&lt;</font><font color="#FF6600">/b&gt;:&lt;/</font>span<font color="#990000">&gt;</font> <font color="#FF0000">{</font><b><font color="#000000">proclaim</font></b><font color="#990000">(</font><b><font color="#0000FF">this</font></b><font color="#990000">.</font>state<font color="#990000">.</font>losses<font color="#990000">)</font><font color="#FF0000">}</font>
+    <font color="#990000">&lt;/</font>div<font color="#990000">&gt;</font>
+<font color="#990000">);</font>
+</tt></pre>
+</div>
+<p>
+This looks very PHP-ish to you? Well, you're wrong - because this is <b>checked
+at compile-time</b>. Try modifying any part of the HTML in that code, say
+rename the <code>style</code> attribute to <code>styl</code>, and watch the
+TypeScript compiler bark at you...
+<div class="codegenWrapper">
+    <pre>
+score4.tsx(148,23): error TS2339: Property 'styl' does not exist on type 'HTMLAttributes'.</pre>
+</div>
+And of course that doesn't just apply to your HTML "template" - try goofing on the
+code itself, mis-typing <code>yy</code> instead of <code>y</code>, and...
+<div class="codegenWrapper">
+    <pre>
+score4.tsx(155,42): error TS2304: Cannot find name 'yy'.</pre>
+</div>
+Complete integration between the two worlds...
+<p>
+Wow.
+<p>
+And you are probably wondering about that <code>cellMaker</code>; why didn't I just
+blast the <code>td</code>s in the inner "loop"?
+<p>
+Well, I think this is a cleaner way to do it:
+<div class="codegenWrapper">
+<!-- Generator: GNU source-highlight 3.1.8
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>    <b><font color="#0000FF">var</font></b> cellMaker <font color="#990000">=</font> <font color="#990000">(</font>y<font color="#990000">:</font>number<font color="#990000">,</font> x<font color="#990000">:</font>number<font color="#990000">)</font> <font color="#990000">=&gt;</font> <font color="#FF0000">{</font>
+        <b><font color="#0000FF">return</font></b> <font color="#990000">(</font>
+            <font color="#990000">&lt;</font>td key<font color="#990000">=</font><font color="#FF0000">{</font>x<font color="#FF0000">}</font> onClick<font color="#990000">=</font><font color="#FF0000">{</font>self<font color="#990000">.</font>handleClick<font color="#990000">.</font><b><font color="#000000">bind</font></b><font color="#990000">(</font>self<font color="#990000">,</font> x<font color="#990000">)</font><font color="#FF0000">}</font><font color="#990000">&gt;</font>
+                <font color="#990000">&lt;</font>div
+                    className<font color="#990000">=</font><font color="#FF0000">{</font>
+                        <font color="#990000">(()</font> <font color="#990000">=&gt;</font> <font color="#FF0000">{</font>
+                            <b><font color="#0000FF">switch</font></b><font color="#990000">(</font>self<font color="#990000">.</font>state<font color="#990000">.</font>board<font color="#990000">[</font>y<font color="#990000">][</font>x<font color="#990000">])</font> <font color="#FF0000">{</font>
+                            <b><font color="#0000FF">case</font></b>  <font color="#993399">4</font><font color="#990000">:</font> <b><font color="#0000FF">return</font></b> <font color="#FF0000">"red_won_coin"</font><font color="#990000">;</font>
+                            <b><font color="#0000FF">case</font></b>  <font color="#993399">1</font><font color="#990000">:</font> <b><font color="#0000FF">return</font></b> <font color="#FF0000">"red_coin"</font><font color="#990000">;</font>
+                            <b><font color="#0000FF">case</font></b> <font color="#990000">-</font><font color="#993399">1</font><font color="#990000">:</font> <b><font color="#0000FF">return</font></b> <font color="#FF0000">"green_coin"</font><font color="#990000">;</font>
+                            <b><font color="#0000FF">case</font></b> <font color="#990000">-</font><font color="#993399">4</font><font color="#990000">:</font> <b><font color="#0000FF">return</font></b> <font color="#FF0000">"green_won_coin"</font><font color="#990000">;</font>
+                            <b><font color="#0000FF">default</font></b><font color="#990000">:</font> <b><font color="#0000FF">return</font></b> <font color="#FF0000">"no_coin"</font><font color="#990000">;</font>
+                            <font color="#FF0000">}</font>
+                        <font color="#FF0000">}</font><font color="#990000">)()</font>
+                    <font color="#FF0000">}</font>
+                <font color="#990000">/&gt;</font>
+            <font color="#990000">&lt;/</font>td<font color="#990000">&gt;</font>
+        <font color="#990000">);</font>
+    <font color="#FF0000">}</font><font color="#990000">;</font>
+</tt></pre>
+</div>
+Notice that JSX expects expressions in the JS bodies - and since <code>switch</code> is
+a statement in TypeScript, I had to enclose it in an anonymous function and 
+immediately call it.
+<h2>Was it worth it?</h2>
+Well, the code that renders the board is something like 50% of the corresponding
+Canvas code. But more importantly, the handling of the click is delegated to normal
+HTML components - and when my board is changed as a response to a click...
+<p>
+...that's when the true power of React manifests - in glorious Spartan succinctness :-)
+<div class="codegenWrapper">
+<!-- Generator: GNU source-highlight 3.1.8
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>    <b><font color="#0000FF">var</font></b> newBoard <font color="#990000">=</font> <b><font color="#0000FF">this</font></b><font color="#990000">.</font><b><font color="#000000">dropDisk</font></b><font color="#990000">(</font><b><font color="#0000FF">this</font></b><font color="#990000">.</font>state<font color="#990000">.</font>board<font color="#990000">,</font> column<font color="#990000">,</font> <font color="#990000">-</font><font color="#993399">1</font><font color="#990000">);</font>
+    <font color="#990000">...</font>
+    <b><font color="#0000FF">this</font></b><font color="#990000">.</font><b><font color="#000000">setState</font></b><font color="#990000">(</font><font color="#FF0000">{</font>
+        board<font color="#990000">:</font> newBoard<font color="#990000">,</font>
+        info<font color="#990000">:</font> msg<font color="#990000">,</font>
+        wins<font color="#990000">:</font> newWins<font color="#990000">,</font>
+        losses<font color="#990000">:</font> newLosses<font color="#990000">,</font>
+    <font color="#FF0000">}</font><font color="#990000">);</font>
+</tt></pre>
+</div>
+<div>
+    <center>
+    <img
+        hspace="20" vspace="10"
+        alt="Spartan state"
+        src="spartan-react.jpg"><br>
+    </center>
+</div>
+And that's it - React will automatically figure out what changed in your state
+since last time, and update your page.
+<p>
+Wow.
+<p>
+I said that already, didn't I?
+<h2>Conclusion</h2>
+Well, frontend development surely changed a lot since I last played with jQuery and
+"friends". Even though this is just a game, with a UI layer of 200 lines of code,
+the difference is quite impressive. I can only imagine what React's impact will be
+in major UIs with complex state.
+<p>
+Almost makes me want to jump back into frontend development... this was a lot of
+fun. And not at all difficult - I ported it all, from Canvas into a working React
+version, in less than 3 hours.
+<p>
+TypeScript helped a lot in this, since, for example, it demanded
+that I pass the state type...
+<div class="codegenWrapper">
+<!-- Generator: GNU source-highlight 3.1.8
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>    <b><font color="#0000FF">class</font></b> Score4 <b><font color="#0000FF">extends</font></b> React<font color="#990000">.</font>Component<font color="#990000">&lt;</font>any<font color="#990000">,</font> Score4State<font color="#990000">&gt;</font> <font color="#FF0000">{</font>
+        brain<font color="#990000">:</font> Score4_AI<font color="#990000">;</font>
+</tt></pre>
+</div>
+...and yelled at me when I was accessing it improperly in my code.
+<p>
+Overall, very pleased with how all these technologies have evolved - I am sure
+frontend people are already aware of them and use them everyday...
+<p>
+...this post is for the rest of you.
+<p>Wake up! :-)
+<p>And play Score4, below :-)
+<p>&nbsp;<p>
+    <a name="playnow"></a> 
+    <div id="board" align="center"></div>
+<br>
+    <hr>
+    <div style='margin-top:1em'>
+        <div style='float:left'>
+            <a target="_blank" href="http://stackoverflow.com/users/382050/ttsiodras">
+                <img src="http://stackoverflow.com/users/flair/382050.png" width="208" height="58" alt="profile for ttsiodras at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for ttsiodras at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
+            </a>
+        </div>
+        <div style='float:left; margin-left:1em'>
+            <a target="_blank" href="https://github.com/ttsiodras">
+                <img border="1" src="github.png" alt='GitHub member ttsiodras' title='GitHub member ttsiodras'>
+            </a>
+        </div>
+        <div style='float:left; margin-left:1em'>
+            <a target="_blank" href="https://projecteuler.net/profile/ttsiodras.png">
+                <img src="https://projecteuler.net/profile/ttsiodras.png" alt='Project Euler member ttsiodras' title='Project Euler member ttsiodras'>
+            </a>
+        </div>
+    </div>
+    <div style='clear:both; margin-bottom:0.5em'></div>
+
+<!-- Used to do this with float:right, but Opera Mini shows nothing with it... back to tables :-( -->
+<table summary="Footer" width="100%" border="0"><tr><td><a href="cv.pdf">My CV</a>&nbsp;&nbsp;<a href="https://plus.google.com/+ThanassisTsiodras/about">About me</a>&nbsp;&nbsp;<a href="https://wizpert.com/thanassis">Talk to me</a>&nbsp;&nbsp;<a href="index.html">Back to index</a></td><td align="right"><em>Last update on: Sat Mar 8 22:58:16 2014</em></td></tr></table>
+
+            <hr style="margin-bottom: 1em">
+            <script src="urchin.js" type="text/javascript"></script>
+            <script type="text/javascript">_uacct = "UA-746316-1";urchinTracker();</script>
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                var disqus_shortname = 'ttsiodras';
+                var disqus_identifier = '../content/score4jsreact.content';
+
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>
+                Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+            </noscript>
+            <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+    </div>
+</body>
+</html>
