@@ -6,6 +6,7 @@ class Score4State {
     info: string;
     wins: number;
     losses: number;
+    brain_depth: number;
 }
 
 class Score4 extends React.Component<any, Score4State> {
@@ -18,6 +19,7 @@ class Score4 extends React.Component<any, Score4State> {
         this.state.wins = 0;
         this.state.losses = 0;
         this.brain = new Score4_AI(this.state.board);
+        this.state.brain_depth = this.brain.defaultDepth;
     }
 
     dropDisk(oldBoard, column, color) {
@@ -51,7 +53,8 @@ class Score4 extends React.Component<any, Score4State> {
             board: getBoard(),
             info: msg,
             wins: this.state.wins,
-            losses: this.state.losses
+            losses: this.state.losses,
+            brain_depth: this.state.brain_depth
         });
         return check.allDone;
     }
@@ -72,7 +75,7 @@ class Score4 extends React.Component<any, Score4State> {
 
     playMove() {
         var start_t = new Date();
-        var result = this.brain.minimax(true, 1, this.brain.defaultDepth);
+        var result = this.brain.minimax(true, 1, this.state.brain_depth);
         var end_t = new Date();
         if (result[0] != -1) {
             this.brain.board = this.state.board;
@@ -112,9 +115,31 @@ class Score4 extends React.Component<any, Score4State> {
                 board: this.state.board,
                 info: this.state.info,
                 wins: this.state.wins,
-                losses: this.state.losses
+                losses: this.state.losses,
+                brain_depth: this.state.brain_depth
             });
         };
+        var dumber = () => {
+            if (this.state.brain_depth > 2)
+                this.setState({
+                    board: this.state.board,
+                    info: this.state.info,
+                    wins: this.state.wins,
+                    losses: this.state.losses,
+                    brain_depth: this.state.brain_depth-1
+                });
+        };
+        var smarter = () => {
+            if (this.state.brain_depth < this.brain.defaultDepth+1)
+                this.setState({
+                    board: this.state.board,
+                    info: this.state.info,
+                    wins: this.state.wins,
+                    losses: this.state.losses,
+                    brain_depth: this.state.brain_depth+1
+                });
+        };
+            
         var cellMaker = (y:number, x:number) => {
             return (
                 <td key={x} onClick={self.handleClick.bind(self, x)}>
@@ -145,28 +170,55 @@ class Score4 extends React.Component<any, Score4State> {
         };
         return (
             <div>
-                <span style={{color:"green"}}>
-                <b>You</b>:</span> {proclaim(this.state.wins)}
-                <div style={{display:'inline-block'}}>
-                    <table className={"grid_table"}>
-                    {
-                        range(Score4_AI.height).map( y => (
-                                <tr key={y}>
-                                {
-                                    range(Score4_AI.width).map( 
-                                        x => cellMaker(y, x)
+                <table>
+                    <tr>
+                        <td style={{"min-width":"7em"}}>
+                            <div style={{
+                                "vertical-align": "middle"
+                            }}>
+                                <span style={{color:"green", "align":"right"}}><b>You</b>:</span><br/>
+                                {proclaim(this.state.wins)}
+                            </div>
+                        </td>
+                        <td>
+                            <table className={"grid_table"}>
+                            {
+                                range(Score4_AI.height).map( y => (
+                                        <tr key={y}>
+                                        {
+                                            range(Score4_AI.width).map( 
+                                                x => cellMaker(y, x)
+                                            )
+                                        }
+                                        </tr>
                                     )
-                                }
-                                </tr>
-                            )
-                        )
-                    }
-                    </table>
-                    <p>{this.state.info}</p>
-                    <button type="button" onClick={resetAndRepaint}><b>New game</b></button>
-                </div>
-                <span style={{color:"red"}}>
-                <b>CPU</b>:</span> {proclaim(this.state.losses)}
+                                )
+                            }
+                            </table>
+                            <p>{this.state.info}</p>
+                            <div>
+                                <button type="button" onClick={resetAndRepaint} style={{float:'left'}}>
+                                    <b>New game</b>
+                                </button>
+                                <div style={{float:'right'}}>
+                                    <button type="button" onClick={dumber}><b>Be dumber!</b></button>
+                                    <span style={{width:10}}>&nbsp;</span>
+                                    {this.state.brain_depth} moves ahead
+                                    <span style={{width:10}}>&nbsp;</span>
+                                    <button type="button" onClick={smarter}><b>Be smarter!</b></button>
+                                </div>
+                            </div>
+                        </td>
+                        <td style={{"min-width":"7em"}}>
+                            <div style={{
+                                "vertical-align": "middle"
+                            }}>
+                                <span style={{color:"red", "align":"right"}}><b>CPU</b>:</span><br/>
+                                {proclaim(this.state.losses)}
+                            </div>
+                        </td>
+                    </tr>
+                </table>
             </div>
         );
     }
