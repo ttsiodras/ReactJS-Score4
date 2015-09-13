@@ -172,7 +172,7 @@ class Score4 extends React.Component<any, Score4State> {
             <div>
                 <table>
                     <tr>
-                        <td style={{"min-width":"7em"}}>
+                        <td style={{"min-width":"7em", "text-align":"center"}}>
                             <div style={{
                                 "vertical-align": "middle"
                             }}>
@@ -195,7 +195,9 @@ class Score4 extends React.Component<any, Score4State> {
                                 )
                             }
                             </table>
-                            <p>{this.state.info}</p>
+                            <div style={{"text-align":"center"}}>
+                                <p>{this.state.info}</p>
+                            </div>
                             <div>
                                 <button type="button" onClick={resetAndRepaint} style={{float:'left'}}>
                                     <b>New game</b>
@@ -209,7 +211,7 @@ class Score4 extends React.Component<any, Score4State> {
                                 </div>
                             </div>
                         </td>
-                        <td style={{"min-width":"7em"}}>
+                        <td style={{"min-width":"7em", "text-align":"center"}}>
                             <div style={{
                                 "vertical-align": "middle"
                             }}>
