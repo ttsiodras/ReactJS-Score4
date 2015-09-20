@@ -233,10 +233,10 @@ class Score4 extends React.Component<any, Score4State> {
                                             <p>{this.state.info}</p>
                                         </div>
                                         <div>
-                                            <button type="button" onClick={resetAndRepaint} style={{float:'left'}}>
+                                            <button type="button" onClick={resetAndRepaint} style={{"float":'left'}}>
                                                 <b>New game</b>
                                             </button>
-                                            <div style={{float:'right'}}>
+                                            <div style={{"float":'right'}}>
                                                 <button type="button" onClick={dumber}><b>Be dumber!</b></button>
                                                 <span style={{width:10}}>&nbsp;</span>
                                                 {this.state.brain_depth} moves ahead
