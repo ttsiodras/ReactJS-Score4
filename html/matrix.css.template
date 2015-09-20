@@ -1,4 +1,4 @@
-@media (min-width: %(viewport_size)dpx) and (max-width: %(viewport_size_p100)dpx) {
+@media %(minwidth)s %(maxwidth)s {
 
     .no_coin {
         width: %(tile_size)dpx;
