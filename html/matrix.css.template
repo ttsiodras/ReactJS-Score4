@@ -1,0 +1,50 @@
+@media (min-width: %(viewport_size)dpx) and (max-width: %(viewport_size_p100)dpx) {
+
+    .no_coin {
+        width: %(tile_size)dpx;
+        height: %(tile_size)dpx;
+    }
+    .red_coin {
+        border-radius: 50%%;
+        width: %(tile_size)dpx;
+        height: %(tile_size)dpx;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%%;
+        width: %(tile_size)dpx;
+        height: %(tile_size)dpx;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%%;
+        width: %(tile_size)dpx;
+        height: %(tile_size)dpx;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%%;
+        width: %(tile_size)dpx;
+        height: %(tile_size)dpx;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: %(tile_size_p5)dpx;
+        min-width: %(tile_size_p4)dpx;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+

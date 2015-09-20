@@ -1,45 +1,2450 @@
-.no_coin {
-    width: 50px;
-    height: 50px;
+@media (min-width: 100px) and (max-width: 199px) {
+
+    .no_coin {
+        width: 5px;
+        height: 5px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 5px;
+        height: 5px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 5px;
+        height: 5px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 5px;
+        height: 5px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 5px;
+        height: 5px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 10px;
+        min-width: 9px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
 }
-.red_coin {
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-    background: red;
+
+
+@media (min-width: 200px) and (max-width: 299px) {
+
+    .no_coin {
+        width: 10px;
+        height: 10px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 15px;
+        min-width: 14px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
 }
-.red_won_coin {
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-    background: #7f0000;
+
+
+@media (min-width: 300px) and (max-width: 399px) {
+
+    .no_coin {
+        width: 15px;
+        height: 15px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 20px;
+        min-width: 19px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
 }
-.green_coin {
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-    background: green;
+
+
+@media (min-width: 400px) and (max-width: 499px) {
+
+    .no_coin {
+        width: 20px;
+        height: 20px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 25px;
+        min-width: 24px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
 }
-.green_won_coin {
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-    background: #002f00;
+
+
+@media (min-width: 500px) and (max-width: 599px) {
+
+    .no_coin {
+        width: 25px;
+        height: 25px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 30px;
+        min-width: 29px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
 }
-.grid_table, td {
-    min-height: 55px;
-    min-width: 54px;
-    border-top: 1px solid black;
-    border-left: 1px solid black;
-    padding: 7px 7px;
-    background: #DDDDDD;
-    border-collapse: collapse;
-    text-align: center;
+
+
+@media (min-width: 600px) and (max-width: 699px) {
+
+    .no_coin {
+        width: 30px;
+        height: 30px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 35px;
+        min-width: 34px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
 }
-.grid_table {
-    border: 3px solid black;
+
+
+@media (min-width: 700px) and (max-width: 799px) {
+
+    .no_coin {
+        width: 35px;
+        height: 35px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 40px;
+        min-width: 39px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
 }
+
+
+@media (min-width: 800px) and (max-width: 899px) {
+
+    .no_coin {
+        width: 40px;
+        height: 40px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 45px;
+        min-width: 44px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+
+@media (min-width: 900px) and (max-width: 999px) {
+
+    .no_coin {
+        width: 45px;
+        height: 45px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 50px;
+        min-width: 49px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+
+@media (min-width: 1000px) and (max-width: 1099px) {
+
+    .no_coin {
+        width: 50px;
+        height: 50px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 55px;
+        min-width: 54px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+
+@media (min-width: 1100px) and (max-width: 1199px) {
+
+    .no_coin {
+        width: 55px;
+        height: 55px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 55px;
+        height: 55px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 55px;
+        height: 55px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 55px;
+        height: 55px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 55px;
+        height: 55px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 60px;
+        min-width: 59px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+
+@media (min-width: 1200px) and (max-width: 1299px) {
+
+    .no_coin {
+        width: 60px;
+        height: 60px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 65px;
+        min-width: 64px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+
+@media (min-width: 1300px) and (max-width: 1399px) {
+
+    .no_coin {
+        width: 65px;
+        height: 65px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 65px;
+        height: 65px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 65px;
+        height: 65px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 65px;
+        height: 65px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 65px;
+        height: 65px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 70px;
+        min-width: 69px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+
+@media (min-width: 1400px) and (max-width: 1499px) {
+
+    .no_coin {
+        width: 70px;
+        height: 70px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 75px;
+        min-width: 74px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+
+@media (min-width: 1500px) and (max-width: 1599px) {
+
+    .no_coin {
+        width: 75px;
+        height: 75px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 75px;
+        height: 75px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 75px;
+        height: 75px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 75px;
+        height: 75px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 75px;
+        height: 75px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 80px;
+        min-width: 79px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+
+@media (min-width: 1600px) and (max-width: 1699px) {
+
+    .no_coin {
+        width: 80px;
+        height: 80px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 85px;
+        min-width: 84px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+
+@media (min-width: 1700px) and (max-width: 1799px) {
+
+    .no_coin {
+        width: 85px;
+        height: 85px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 85px;
+        height: 85px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 85px;
+        height: 85px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 85px;
+        height: 85px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 85px;
+        height: 85px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 90px;
+        min-width: 89px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+
+@media (min-width: 1800px) and (max-width: 1899px) {
+
+    .no_coin {
+        width: 90px;
+        height: 90px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 90px;
+        height: 90px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 90px;
+        height: 90px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 90px;
+        height: 90px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 90px;
+        height: 90px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 95px;
+        min-width: 94px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+
+@media (min-width: 1900px) and (max-width: 1999px) {
+
+    .no_coin {
+        width: 95px;
+        height: 95px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 95px;
+        height: 95px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 95px;
+        height: 95px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 95px;
+        height: 95px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 95px;
+        height: 95px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 100px;
+        min-width: 99px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+
+@media (min-width: 2000px) and (max-width: 2099px) {
+
+    .no_coin {
+        width: 100px;
+        height: 100px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 105px;
+        min-width: 104px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+
+@media (min-width: 2100px) and (max-width: 2199px) {
+
+    .no_coin {
+        width: 105px;
+        height: 105px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 105px;
+        height: 105px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 105px;
+        height: 105px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 105px;
+        height: 105px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 105px;
+        height: 105px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 110px;
+        min-width: 109px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+
+@media (min-width: 2200px) and (max-width: 2299px) {
+
+    .no_coin {
+        width: 110px;
+        height: 110px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 110px;
+        height: 110px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 110px;
+        height: 110px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 110px;
+        height: 110px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 110px;
+        height: 110px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 115px;
+        min-width: 114px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+
+@media (min-width: 2300px) and (max-width: 2399px) {
+
+    .no_coin {
+        width: 115px;
+        height: 115px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 115px;
+        height: 115px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 115px;
+        height: 115px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 115px;
+        height: 115px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 115px;
+        height: 115px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 120px;
+        min-width: 119px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+
+@media (min-width: 2400px) and (max-width: 2499px) {
+
+    .no_coin {
+        width: 120px;
+        height: 120px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 125px;
+        min-width: 124px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+
+@media (min-width: 2500px) and (max-width: 2599px) {
+
+    .no_coin {
+        width: 125px;
+        height: 125px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 125px;
+        height: 125px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 125px;
+        height: 125px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 125px;
+        height: 125px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 125px;
+        height: 125px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 130px;
+        min-width: 129px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+
+@media (min-width: 2600px) and (max-width: 2699px) {
+
+    .no_coin {
+        width: 130px;
+        height: 130px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 130px;
+        height: 130px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 130px;
+        height: 130px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 130px;
+        height: 130px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 130px;
+        height: 130px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 135px;
+        min-width: 134px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+
+@media (min-width: 2700px) and (max-width: 2799px) {
+
+    .no_coin {
+        width: 135px;
+        height: 135px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 135px;
+        height: 135px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 135px;
+        height: 135px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 135px;
+        height: 135px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 135px;
+        height: 135px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 140px;
+        min-width: 139px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+
+@media (min-width: 2800px) and (max-width: 2899px) {
+
+    .no_coin {
+        width: 140px;
+        height: 140px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 140px;
+        height: 140px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 140px;
+        height: 140px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 140px;
+        height: 140px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 140px;
+        height: 140px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 145px;
+        min-width: 144px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+
+@media (min-width: 2900px) and (max-width: 2999px) {
+
+    .no_coin {
+        width: 145px;
+        height: 145px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 145px;
+        height: 145px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 145px;
+        height: 145px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 145px;
+        height: 145px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 145px;
+        height: 145px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 150px;
+        min-width: 149px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+
+@media (min-width: 3000px) and (max-width: 3099px) {
+
+    .no_coin {
+        width: 150px;
+        height: 150px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 155px;
+        min-width: 154px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+
+@media (min-width: 3100px) and (max-width: 3199px) {
+
+    .no_coin {
+        width: 155px;
+        height: 155px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 155px;
+        height: 155px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 155px;
+        height: 155px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 155px;
+        height: 155px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 155px;
+        height: 155px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 160px;
+        min-width: 159px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+
+@media (min-width: 3200px) and (max-width: 3299px) {
+
+    .no_coin {
+        width: 160px;
+        height: 160px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 160px;
+        height: 160px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 160px;
+        height: 160px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 160px;
+        height: 160px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 160px;
+        height: 160px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 165px;
+        min-width: 164px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+
+@media (min-width: 3300px) and (max-width: 3399px) {
+
+    .no_coin {
+        width: 165px;
+        height: 165px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 165px;
+        height: 165px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 165px;
+        height: 165px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 165px;
+        height: 165px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 165px;
+        height: 165px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 170px;
+        min-width: 169px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+
+@media (min-width: 3400px) and (max-width: 3499px) {
+
+    .no_coin {
+        width: 170px;
+        height: 170px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 170px;
+        height: 170px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 170px;
+        height: 170px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 170px;
+        height: 170px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 170px;
+        height: 170px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 175px;
+        min-width: 174px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+
+@media (min-width: 3500px) and (max-width: 3599px) {
+
+    .no_coin {
+        width: 175px;
+        height: 175px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 175px;
+        height: 175px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 175px;
+        height: 175px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 175px;
+        height: 175px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 175px;
+        height: 175px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 180px;
+        min-width: 179px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+
+@media (min-width: 3600px) and (max-width: 3699px) {
+
+    .no_coin {
+        width: 180px;
+        height: 180px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 180px;
+        height: 180px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 180px;
+        height: 180px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 180px;
+        height: 180px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 180px;
+        height: 180px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 185px;
+        min-width: 184px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+
+@media (min-width: 3700px) and (max-width: 3799px) {
+
+    .no_coin {
+        width: 185px;
+        height: 185px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 185px;
+        height: 185px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 185px;
+        height: 185px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 185px;
+        height: 185px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 185px;
+        height: 185px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 190px;
+        min-width: 189px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+
+@media (min-width: 3800px) and (max-width: 3899px) {
+
+    .no_coin {
+        width: 190px;
+        height: 190px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 190px;
+        height: 190px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 190px;
+        height: 190px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 190px;
+        height: 190px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 190px;
+        height: 190px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 195px;
+        min-width: 194px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+
+@media (min-width: 3900px) and (max-width: 3999px) {
+
+    .no_coin {
+        width: 195px;
+        height: 195px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 195px;
+        height: 195px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 195px;
+        height: 195px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 195px;
+        height: 195px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 195px;
+        height: 195px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 200px;
+        min-width: 199px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+
+@media (min-width: 4000px) and (max-width: 4099px) {
+
+    .no_coin {
+        width: 200px;
+        height: 200px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 205px;
+        min-width: 204px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+
+@media (min-width: 4100px) and (max-width: 4199px) {
+
+    .no_coin {
+        width: 205px;
+        height: 205px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 205px;
+        height: 205px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 205px;
+        height: 205px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 205px;
+        height: 205px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 205px;
+        height: 205px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 210px;
+        min-width: 209px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+
+@media (min-width: 4200px) and (max-width: 4299px) {
+
+    .no_coin {
+        width: 210px;
+        height: 210px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 210px;
+        height: 210px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 210px;
+        height: 210px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 210px;
+        height: 210px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 210px;
+        height: 210px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 215px;
+        min-width: 214px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+
+@media (min-width: 4300px) and (max-width: 4399px) {
+
+    .no_coin {
+        width: 215px;
+        height: 215px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 215px;
+        height: 215px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 215px;
+        height: 215px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 215px;
+        height: 215px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 215px;
+        height: 215px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 220px;
+        min-width: 219px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+
+@media (min-width: 4400px) and (max-width: 4499px) {
+
+    .no_coin {
+        width: 220px;
+        height: 220px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 220px;
+        height: 220px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 220px;
+        height: 220px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 220px;
+        height: 220px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 220px;
+        height: 220px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 225px;
+        min-width: 224px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+
+@media (min-width: 4500px) and (max-width: 4599px) {
+
+    .no_coin {
+        width: 225px;
+        height: 225px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 225px;
+        height: 225px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 225px;
+        height: 225px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 225px;
+        height: 225px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 225px;
+        height: 225px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 230px;
+        min-width: 229px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+
+@media (min-width: 4600px) and (max-width: 4699px) {
+
+    .no_coin {
+        width: 230px;
+        height: 230px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 230px;
+        height: 230px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 230px;
+        height: 230px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 230px;
+        height: 230px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 230px;
+        height: 230px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 235px;
+        min-width: 234px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+
+@media (min-width: 4700px) and (max-width: 4799px) {
+
+    .no_coin {
+        width: 235px;
+        height: 235px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 235px;
+        height: 235px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 235px;
+        height: 235px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 235px;
+        height: 235px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 235px;
+        height: 235px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 240px;
+        min-width: 239px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+
+@media (min-width: 4800px) and (max-width: 4899px) {
+
+    .no_coin {
+        width: 240px;
+        height: 240px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 240px;
+        height: 240px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 240px;
+        height: 240px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 240px;
+        height: 240px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 240px;
+        height: 240px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 245px;
+        min-width: 244px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+
+@media (min-width: 4900px) and (max-width: 4999px) {
+
+    .no_coin {
+        width: 245px;
+        height: 245px;
+    }
+    .red_coin {
+        border-radius: 50%;
+        width: 245px;
+        height: 245px;
+        display: inline-block;
+        background: red;
+    }
+    .red_won_coin {
+        border-radius: 50%;
+        width: 245px;
+        height: 245px;
+        display: inline-block;
+        background: #7f0000;
+    }
+    .green_coin {
+        border-radius: 50%;
+        width: 245px;
+        height: 245px;
+        display: inline-block;
+        background: green;
+    }
+    .green_won_coin {
+        border-radius: 50%;
+        width: 245px;
+        height: 245px;
+        display: inline-block;
+        background: #002f00;
+    }
+    .grid_table, td {
+        min-height: 250px;
+        min-width: 249px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        padding: 7px 7px;
+        background: #DDDDDD;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .grid_table {
+        border: 2px solid black;
+    }
+}
+
+

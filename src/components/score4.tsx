@@ -7,10 +7,15 @@ class Score4State {
     wins: number;
     losses: number;
     brain_depth: number;
+    viewport_size: number;
 }
 
 class Score4 extends React.Component<any, Score4State> {
     brain: Score4_AI;
+
+    static getViewportSize() {
+        return Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    }
 
     static GAME_OVER_MESSAGE = "GAME OVER - Try again?";
     constructor() {
@@ -20,6 +25,23 @@ class Score4 extends React.Component<any, Score4State> {
         this.state.losses = 0;
         this.brain = new Score4_AI(this.state.board);
         this.state.brain_depth = this.brain.defaultDepth;
+        this.state.viewport_size = Score4.getViewportSize();
+    }
+
+    componentDidMount() {
+        window.addEventListener('resize', this.handleResize.bind(this));
+    }
+
+    handleResize() {
+        // Partial state update - TypeScript needs help
+        var unsafe:any = this;
+        unsafe.setState({
+            viewport_size: Score4.getViewportSize()
+        });
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.handleResize.bind(this));
     }
 
     dropDisk(oldBoard, column, color) {
@@ -54,7 +76,8 @@ class Score4 extends React.Component<any, Score4State> {
             info: msg,
             wins: this.state.wins,
             losses: this.state.losses,
-            brain_depth: this.state.brain_depth
+            brain_depth: this.state.brain_depth,
+            viewport_size: this.state.viewport_size
         });
         return check.allDone;
     }
@@ -116,7 +139,8 @@ class Score4 extends React.Component<any, Score4State> {
                 info: this.state.info,
                 wins: this.state.wins,
                 losses: this.state.losses,
-                brain_depth: this.state.brain_depth
+                brain_depth: this.state.brain_depth,
+                viewport_size: this.state.viewport_size
             });
         };
         var dumber = () => {
@@ -126,7 +150,8 @@ class Score4 extends React.Component<any, Score4State> {
                     info: this.state.info,
                     wins: this.state.wins,
                     losses: this.state.losses,
-                    brain_depth: this.state.brain_depth-1
+                    brain_depth: this.state.brain_depth-1,
+                    viewport_size: this.state.viewport_size
                 });
         };
         var smarter = () => {
@@ -136,7 +161,8 @@ class Score4 extends React.Component<any, Score4State> {
                     info: this.state.info,
                     wins: this.state.wins,
                     losses: this.state.losses,
-                    brain_depth: this.state.brain_depth+1
+                    brain_depth: this.state.brain_depth+1,
+                    viewport_size: this.state.viewport_size
                 });
         };
             
@@ -172,53 +198,69 @@ class Score4 extends React.Component<any, Score4State> {
             <div>
                 <table>
                     <tr>
-                        <td style={{"min-width":"7em", "text-align":"center"}}>
-                            <div style={{
-                                "vertical-align": "middle"
-                            }}>
-                                <span style={{color:"green", "align":"right"}}><b>You</b>:</span><br/>
-                                {proclaim(this.state.wins)}
-                            </div>
-                        </td>
-                        <td>
-                            <table className={"grid_table"}>
-                            {
-                                range(Score4_AI.height).map( y => (
-                                        <tr key={y}>
+                        {
+                            (() => {
+                                var tds = [];
+                                if (this.state.viewport_size > 640) {
+                                    tds.push(
+                                        <td style={{"min-width":"7em", "text-align":"center"}}>
+                                            <div style={{
+                                                "vertical-align": "middle"
+                                            }}>
+                                                <span style={{color:"green", "align":"right"}}><b>You</b>:</span><br/>
+                                                {proclaim(this.state.wins)}
+                                            </div>
+                                        </td>
+                                    );
+                                }
+                                tds.push(
+                                    <td>
+                                        <table className={"grid_table"}>
                                         {
-                                            range(Score4_AI.width).map( 
-                                                x => cellMaker(y, x)
+                                            range(Score4_AI.height).map( y => (
+                                                    <tr key={y}>
+                                                    {
+                                                        range(Score4_AI.width).map( 
+                                                            x => cellMaker(y, x)
+                                                        )
+                                                    }
+                                                    </tr>
+                                                )
                                             )
                                         }
-                                        </tr>
-                                    )
-                                )
-                            }
-                            </table>
-                            <div style={{"text-align":"center"}}>
-                                <p>{this.state.info}</p>
-                            </div>
-                            <div>
-                                <button type="button" onClick={resetAndRepaint} style={{float:'left'}}>
-                                    <b>New game</b>
-                                </button>
-                                <div style={{float:'right'}}>
-                                    <button type="button" onClick={dumber}><b>Be dumber!</b></button>
-                                    <span style={{width:10}}>&nbsp;</span>
-                                    {this.state.brain_depth} moves ahead
-                                    <span style={{width:10}}>&nbsp;</span>
-                                    <button type="button" onClick={smarter}><b>Be smarter!</b></button>
-                                </div>
-                            </div>
-                        </td>
-                        <td style={{"min-width":"7em", "text-align":"center"}}>
-                            <div style={{
-                                "vertical-align": "middle"
-                            }}>
-                                <span style={{color:"red", "align":"right"}}><b>CPU</b>:</span><br/>
-                                {proclaim(this.state.losses)}
-                            </div>
-                        </td>
+                                        </table>
+                                        <div style={{"text-align":"center"}}>
+                                            <p>{this.state.info}</p>
+                                        </div>
+                                        <div>
+                                            <button type="button" onClick={resetAndRepaint} style={{float:'left'}}>
+                                                <b>New game</b>
+                                            </button>
+                                            <div style={{float:'right'}}>
+                                                <button type="button" onClick={dumber}><b>Be dumber!</b></button>
+                                                <span style={{width:10}}>&nbsp;</span>
+                                                {this.state.brain_depth} moves ahead
+                                                <span style={{width:10}}>&nbsp;</span>
+                                                <button type="button" onClick={smarter}><b>Be smarter!</b></button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                );
+                                if (this.state.viewport_size > 640) {
+                                    tds.push(
+                                        <td style={{"min-width":"7em", "text-align":"center"}}>
+                                            <div style={{
+                                                "vertical-align": "middle"
+                                            }}>
+                                                <span style={{color:"red", "align":"right"}}><b>CPU</b>:</span><br/>
+                                                {proclaim(this.state.losses)}
+                                            </div>
+                                        </td>
+                                    );
+                                }
+                                return tds;
+                            })()
+                        }
                     </tr>
                 </table>
             </div>
