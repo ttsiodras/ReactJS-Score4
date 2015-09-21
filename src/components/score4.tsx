@@ -1,13 +1,14 @@
 /// <reference path="../typings/react/react-global.d.ts" />
 /// <reference path="score4_AI.ts" />
 
-class Score4State {
-    board: number[][];
-    info: string;
-    wins: number;
-    losses: number;
-    brain_depth: number;
-    viewport_size: number;
+interface Score4State {
+    board?: number[][];
+    info?: string;
+    wins?: number;
+    losses?: number;
+    brain_depth?: number;
+    viewport_size?: number;
+    canClick?: boolean;
 }
 
 class Score4 extends React.Component<any, Score4State> {
@@ -26,6 +27,7 @@ class Score4 extends React.Component<any, Score4State> {
         this.brain = new Score4_AI(this.state.board);
         this.state.brain_depth = this.brain.defaultDepth;
         this.state.viewport_size = Score4.getViewportSize();
+        this.state.canClick = true;
     }
 
     componentDidMount() {
@@ -33,9 +35,7 @@ class Score4 extends React.Component<any, Score4State> {
     }
 
     handleResize() {
-        // Partial state update - TypeScript needs help
-        var unsafe:any = this;
-        unsafe.setState({
+        this.setState({
             viewport_size: Score4.getViewportSize()
         });
     }
@@ -61,7 +61,13 @@ class Score4 extends React.Component<any, Score4State> {
         return this.state.info === Score4.GAME_OVER_MESSAGE;
     }
 
-    checkEndGame(getMsg: ()=>string, getBoard: ()=>number[][]):boolean {
+    checkEndGame(
+            getMsg: ()=>string,
+            getBoard: ()=>number[][],
+            canClick: boolean)
+        :
+            boolean
+    {
         var msg:string, check = this.brain.CheckWinner();
         if (check.allDone) {
             if (check.winner == 4)
@@ -69,28 +75,28 @@ class Score4 extends React.Component<any, Score4State> {
             else if (check.winner == -4)
                 this.state.wins++;
             msg = Score4.GAME_OVER_MESSAGE;
+            canClick = false;
         } else
             msg = getMsg();
         this.setState({
             board: getBoard(),
             info: msg,
-            wins: this.state.wins,
-            losses: this.state.losses,
-            brain_depth: this.state.brain_depth,
-            viewport_size: this.state.viewport_size
+            canClick: canClick
         });
         return check.allDone;
     }
 
     handleClick(column) {
+        if (!this.state.canClick)
+            return;
         if (this.gameOver())
             return;
         var newBoard = this.dropDisk(this.state.board, column, -1);
         this.brain.board = newBoard;
         if (this.checkEndGame(
                 () => "Thinking, please wait...",
-                () => (newBoard !== null ? newBoard : this.state.board) )
-            )
+                () => (newBoard !== null ? newBoard : this.state.board),
+                false))
             return;
         // Give the browser the opportunity to draw the tiles
         setTimeout(this.playMove.bind(this), 100);
@@ -103,6 +109,7 @@ class Score4 extends React.Component<any, Score4State> {
         if (result[0] != -1) {
             this.brain.board = this.state.board;
             this.brain.dropDiskMutate(result[0], 1);
+            this.state.canClick = true;
         }
         this.checkEndGame(
             () =>
@@ -110,12 +117,13 @@ class Score4 extends React.Component<any, Score4State> {
                 (end_t.getTime() - start_t.getTime())/1000.0 +
                 " seconds."
             ,
-            () => this.state.board);
+            () => this.state.board,
+            true);
     }
 
     reset() {
         if (this.state === undefined || this.state === null)
-            this.state = new Score4State();
+            this.state = {};
         this.state.board = [];
         for (var y=0; y<Score4_AI.height; y++) {
             var r = [];
@@ -128,47 +136,34 @@ class Score4 extends React.Component<any, Score4State> {
         var middle = Math.floor(Score4_AI.width/2);
         this.state.board[bottom][middle] = 1;
         this.state.info = "Click on any column to drop a green chip...";
+        this.state.canClick = true;
     }
 
     render() {
         var self = this;
         var resetAndRepaint = () => {
             self.reset();
-            this.setState({
-                board: this.state.board,
-                info: this.state.info,
-                wins: this.state.wins,
-                losses: this.state.losses,
-                brain_depth: this.state.brain_depth,
-                viewport_size: this.state.viewport_size
-            });
+            this.setState(this.state);
         };
         var dumber = () => {
             if (this.state.brain_depth > 2)
                 this.setState({
-                    board: this.state.board,
-                    info: this.state.info,
-                    wins: this.state.wins,
-                    losses: this.state.losses,
                     brain_depth: this.state.brain_depth-1,
-                    viewport_size: this.state.viewport_size
                 });
         };
         var smarter = () => {
             if (this.state.brain_depth < this.brain.defaultDepth+1)
                 this.setState({
-                    board: this.state.board,
-                    info: this.state.info,
-                    wins: this.state.wins,
-                    losses: this.state.losses,
                     brain_depth: this.state.brain_depth+1,
-                    viewport_size: this.state.viewport_size
                 });
         };
             
         var cellMaker = (y:number, x:number) => {
             return (
-                <td key={x} onClick={self.handleClick.bind(self, x)}>
+                <td key={x}
+                    style={{"cursor":"pointer"}}
+                    onClick={self.handleClick.bind(self, x)}
+                >
                     <div
                         className={
                             (() => {
