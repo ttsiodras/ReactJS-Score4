@@ -1,10 +1,10 @@
 Introduction
 ============
-[Blog post about this code can be read here](http://users.softlab.ntua.gr/~ttsiod/score4jsreact.html).
+[Blog post about this code can be read here](https://www.thanassis.space/score4jsreact.html).
 
 I finally found some time to play with ReactJS... and to make it
 even more interesting, I added TypeScript to the mix,.. and ported
-my [Score4](http://users.softlab.ntua.gr/~ttsiod/score4js.html)
+my [Score4](https://www.thanassis.space/score4js.html)
 Javascript game to ReactJS.
 
 The result? Awesome, state-driven rendering of the tiles (using
@@ -34,7 +34,7 @@ play the game!
 
 The page shown is actually the page from my blog - so the links
 in there will only work properly viewed from 
-[here](http://users.softlab.ntua.gr/~ttsiod/score4jsreact.html).
-Still, you can play the game by simply navigating to the bottom of that page.
+[here](https://www.thanassis.space/score4jsreact.html).
+But you can play the game anyway - just click on any of the board tiles.
 
 Enjoy!
